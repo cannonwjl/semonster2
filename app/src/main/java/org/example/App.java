@@ -1,11 +1,11 @@
 package org.example;
 
+import java.util.LinkedList;
 import java.util.Random;
 
 public class App {
   private static final Random RANDOM = new Random();
-  private static final int MONSTER_TYPE_COUNT = 5;
-  private static final int MONSTER_COUNT = 5;
+  private static final int MAX_RANDOM_NUMBER = 4;
 
   public String getGreeting() {
     return "Hello SEMonster";
@@ -14,12 +14,19 @@ public class App {
   public static void main(String[] args) {
     System.out.println(new App().getGreeting());
 
-    for (int i = 0; i < MONSTER_COUNT; i++) {
-      int nameNumber = RANDOM.nextInt(MONSTER_TYPE_COUNT);
-      int rareNumber = RANDOM.nextInt(MONSTER_TYPE_COUNT);
+    Player player = new Player(createRandomList(10), "user");
+    player.drawMonsters();
 
-      Monster monster = new Monster(nameNumber, rareNumber);
-      System.out.println(monster);
+    System.out.print(player);
+  }
+
+  public static LinkedList<Integer> createRandomList(int count) {
+    LinkedList<Integer> randomNumberList = new LinkedList<>();
+
+    for (int i = 0; i < count; i++) {
+      randomNumberList.add(RANDOM.nextInt(MAX_RANDOM_NUMBER + 1));
     }
+
+    return randomNumberList;
   }
 }
