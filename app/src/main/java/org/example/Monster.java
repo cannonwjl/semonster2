@@ -6,7 +6,10 @@ public class Monster {
       "サハギン",
       "ドラゴン",
       "デュラハン",
-      "シーサーペント"
+      "シーサーペント",
+      "スズキ",
+      "フェニックス",
+      "ユニコーン"
   };
 
   private final String name;
