@@ -7,14 +7,16 @@ public class Player {
   private final String name;
   private final ArrayList<Monster> monsterDeck = new ArrayList<>();
   private final LinkedList<Integer> randomNumberList;
+  private int hp;
 
   Player(LinkedList<Integer> randomNumberList, String playerName) {
     this.randomNumberList = randomNumberList;
     this.name = playerName;
+    this.hp = 100;
   }
 
   public void drawMonsters() {
-    for (int i = 0; i < 8; i++) {
+    for (int i = 0; i < 5; i++) {
       int nameNumber = randomNumberList.pop();
       int rareNumber = randomNumberList.pop();
 
@@ -26,6 +28,7 @@ public class Player {
   public String toString() {
     StringBuilder result = new StringBuilder();
 
+    result.append("HP: ").append(hp).append("\n");
     result.append("Deck:").append(name).append("\n");
 
     for (Monster monster : monsterDeck) {
