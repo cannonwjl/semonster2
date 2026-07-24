@@ -1,37 +1,43 @@
 package org.example;
 
 public class Monster {
-    private static final String[] MONSTERS = {
-        "スライム",
-        "サハギン",
-        "ドラゴン",
-        "デュラハン",
-        "シーサーペント"
-    };
+  private static final String[] MONSTERS = {
+      "スライム",
+      "サハギン",
+      "ドラゴン",
+      "デュラハン",
+      "シーサーペント",
+      "スズキ",
+      "フェニックス",
+      "ユニコーン"
+  };
 
-    private static final String[] EVOLVED_MONSTERS = {
-        "キングスライム",
-        "サハギンロード",
-        "エンシェントドラゴン",
-        "デュラハンロード",
-        "リヴァイアサン"
-    };
+  private static final String[] EVOLVED_MONSTERS = {
+      "キングスライム",
+      "サハギンロード",
+      "エンシェントドラゴン",
+      "デュラハンロード",
+      "リヴァイアサン",
+      "キングスズキ",
+      "エンシェントフェニックス",
+      "ロイヤルユニコーン"
+  };
 
     private final String name;
-    private final int rare;
+  private final int rare;
 
-    Monster(int nameNumber, int rareNumber) {
-        this.rare = rareNumber;
+  Monster(int nameNumber, int rareNumber) {
+    this.rare = rareNumber;
 
-        if (rareNumber >= 3) {
-            this.name = EVOLVED_MONSTERS[nameNumber];
-        } else {
-            this.name = MONSTERS[nameNumber];
-        }
+    if (rareNumber >= 3) {
+      this.name = EVOLVED_MONSTERS[nameNumber];
+    } else {
+      this.name = MONSTERS[nameNumber];
     }
+  }
 
-    @Override
-    public String toString() {
-        return name + ":レア度[" + rare + "]\n";
-    }
+  @Override
+  public String toString() {
+    return name + ":レア度[" + rare + "]\n";
+  }
 }

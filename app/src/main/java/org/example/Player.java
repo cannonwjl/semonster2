@@ -14,7 +14,7 @@ public class Player {
   }
 
   public void drawMonsters() {
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 8; i++) {
       int nameNumber = randomNumberList.pop();
       int rareNumber = randomNumberList.pop();
 
