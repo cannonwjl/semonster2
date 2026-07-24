@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class App {
   private static final Random RANDOM = new Random();
-  private static final int MAX_RANDOM_NUMBER = 4;
+  private static final int MAX_RANDOM_NUMBER = 7;
 
   public String getGreeting() {
     return "Hello SEMonster";
@@ -14,7 +14,7 @@ public class App {
   public static void main(String[] args) {
     System.out.println(new App().getGreeting());
 
-    Player player = new Player(createRandomList(10), "user");
+    Player player = new Player(createRandomList(16), "user");
     player.drawMonsters();
 
     System.out.print(player);

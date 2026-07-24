@@ -6,15 +6,34 @@ public class Monster {
       "サハギン",
       "ドラゴン",
       "デュラハン",
-      "シーサーペント"
+      "シーサーペント",
+      "スズキ",
+      "フェニックス",
+      "ユニコーン"
   };
 
-  private final String name;
+  private static final String[] EVOLVED_MONSTERS = {
+      "キングスライム",
+      "サハギンロード",
+      "エンシェントドラゴン",
+      "デュラハンロード",
+      "リヴァイアサン",
+      "キングスズキ",
+      "エンシェントフェニックス",
+      "ロイヤルユニコーン"
+  };
+
+    private final String name;
   private final int rare;
 
   Monster(int nameNumber, int rareNumber) {
-    name = MONSTERS[nameNumber];
-    rare = rareNumber;
+    this.rare = rareNumber;
+
+    if (rareNumber >= 3) {
+      this.name = EVOLVED_MONSTERS[nameNumber];
+    } else {
+      this.name = MONSTERS[nameNumber];
+    }
   }
 
   @Override
